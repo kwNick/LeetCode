@@ -13,4 +13,8 @@ class Solution {
         }
         return sum;
     }
+
+    public int fib(int n) { //using the golden ratio; O(logN) time
+        return (int) Math.round(Math.pow(1.6180339887, n)/Math.sqrt(5));
+    }
 }
