@@ -21,3 +21,12 @@ var addTwoPromises_2 = async function (promise1, promise2) {      //leet code sa
         throw error;
     }
 };
+
+var addTwoPromises_3 = async function (promise1, promise2) {      //leet code says: O(max(promise1,promise2])) but i think its O(promise1+promise2)
+    try {      //using .then to await promise1's result and then await promise2's result and sum them
+        return promise1.then((val) => promise2.then((val2) => val + val2))
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+};
