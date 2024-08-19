@@ -3,7 +3,7 @@
  * @param {Promise} promise2
  * @return {Promise}
  */
-var addTwoPromises = async function (promise1, promise2) {
+var addTwoPromises = async function (promise1, promise2) {      //O(max(promise1,promise2]))
     try {
         const [res1, res2] = await Promise.all([promise1, promise2]);
         return res1 + res2;
