@@ -30,3 +30,24 @@ var addTwoPromises_3 = async function (promise1, promise2) {      //leet code sa
         throw error;
     }
 };
+
+var addTwoPromises_3 = async function (promise1, promise2) {      //leet code says: O(promise1 + promise2)
+    return new Promise((resolve, reject) => {
+        let count = 2;
+        let res = 0;
+
+        [promise1, promise2].forEach(async promise => {
+            try {
+                const subRes = await promise;
+                res += subRes;
+                count--;
+
+                if (count === 0) {
+                    resolve(res);
+                }
+            } catch (err) {
+                reject(err);
+            }
+        });
+    });
+};
