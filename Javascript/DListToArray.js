@@ -14,7 +14,7 @@
 var toArray = function (head) {
     let arr = [];
     let tmp = head;
-    while (tmp != null) {
+    while (tmp) {
         arr.push(tmp.val);
         tmp = tmp.next;
     }
