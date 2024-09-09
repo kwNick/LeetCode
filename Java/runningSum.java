@@ -7,4 +7,11 @@ class Solution {
         }
         return nums;
     }
+
+    public int[] runningSum_2(int[] nums) { //faster than above - the current element plus the running sum of the preceding element
+        for(int i = 1; i < nums.length; i++){
+            nums[i] += nums[i-1];
+        }
+        return nums;
+    }
 }
